@@ -31,3 +31,4 @@ const orderSchema = new Schema({
         virtuals : true
     }
 });
+module.exports = mongoose.model('Orders', orderSchema)

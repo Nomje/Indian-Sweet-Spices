@@ -19,4 +19,4 @@ const itemSchema = new Schema({
       timestamps: true
     });
 
-modeule.exports = itemSchema;    
+module.exports = itemSchema;    
