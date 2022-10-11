@@ -6,8 +6,8 @@ export function fetchCart(){
     return sendRequest(`${BASE_URL}/cart`)
 }
 
-export function itemInCart(){
-
+export function itemInCart(itemId){
+    return sendRequest(`${BASE_URL}/cart/items/${itemId}`, 'POST')
 }
 
 export function itemQtyCart(){
