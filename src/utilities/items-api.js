@@ -6,6 +6,6 @@ export function fetchAll(){
     return sendRequest(BASE_URL)
 }
 
-export function getItem(){
+export function getItem(id){
     return sendRequest(`${BASE_URL}/${id}`)
 }

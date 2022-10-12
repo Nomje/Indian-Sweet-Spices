@@ -22,7 +22,7 @@ const orderSchema = new Schema({
     },
     lineItems:[lineItemsSchema],
     paid:{
-        type: Boolen, 
+        type: Boolean, 
         default: false
     }
 },{
