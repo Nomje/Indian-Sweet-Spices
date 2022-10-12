@@ -13,8 +13,8 @@ export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
           <button
             className="btn-xs"
             onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty - 1)}
-            >−</button>
-          }
+          >−</button>
+        }
         <span>{lineItem.qty}</span>
         {!isPaid &&
           <button

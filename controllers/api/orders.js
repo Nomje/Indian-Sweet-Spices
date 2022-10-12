@@ -1,43 +1,45 @@
 const Order = require('../../models/order');
 const Item = require('../../models/item');
 
+module.exports = {
+  cart,
+  addToCart,
+  setItemQtyInCart,
+  checkout,
+  history,
+};
 
+async function history(req, res) {
+  // Get history of orders
+  const history = await Order.find({ user: req.user._id, isPaid: true })
+  console.log(history);
+  res.json(history)
+}
+
+// A cart is the unpaid order for a user
 async function cart(req, res) {
-  const cart = await Order.fetchCart(req.user._id);
+  const cart = await Order.getCart(req.user._id);
   res.json(cart);
 }
 
-async function itemInCart(req, res) {
-  const cart = await Order.fetchCart(req.user._id);
-  await cart.itemInCart(req.params.id);
+// Add the item to the cart
+async function addToCart(req, res) {
+  const cart = await Order.getCart(req.user._id);
+  await cart.addItemToCart(req.params.id);
   res.json(cart);
 }
 
-async function itemQtyCart(req, res) {
-  const cart = await Order.fetchCart(req.user._id);
+// Updates an item in the cart's qty
+async function setItemQtyInCart(req, res) {
+  const cart = await Order.getCart(req.user._id);
   await cart.setItemQty(req.body.itemId, req.body.newQty);
   res.json(cart);
 }
 
-
+// Update the cart's isPaid property to true
 async function checkout(req, res) {
-  const cart = await Order.fetchCart(req.user._id);
-  cart.paid = true;
+  const cart = await Order.getCart(req.user._id);
+  cart.isPaid = true;
   await cart.save();
   res.json(cart);
 }
-
-async function getOrderHistory(req, res) {
-  const orders = await Order
-    .find({ user: req.user._id, paid: true })
-    .sort('-updatedAt').exec();
-  res.json(orders);
-}
-
-module.exports = {
-    cart,
-    itemInCart,
-    itemQtyCart,
-    checkout,
-    getOrderHistory
-  };

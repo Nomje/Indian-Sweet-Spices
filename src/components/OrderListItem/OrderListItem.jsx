@@ -1,16 +1,12 @@
-import './OrderListItem.css';
+import OrderDetail from "../OrderDetail/OrderDetail"
 
-export default function OrderListItem({ order, isSelected, handleSelectOrder }) {
+export default function OrderListItem({ order }) {
+  console.log("OrderListItem:" + order)
   return (
-    <div className={`OrderListItem${isSelected ? ' selected' : ''}`} onClick={() => handleSelectOrder(order)}>
-      <div>
-        <div>Order Id: <span className="smaller">{order.orderId}</span></div>
-        <div className="smaller">{new Date(order.updatedAt).toLocaleDateString()}</div>
-      </div>
-      <div className="align-rt">
-        <div>${order.orderTotal.toFixed(2)}</div>
-        <div className="smaller">{order.totalQty} Item{order.totalQty > 1 ? 's' : ''}</div>
-      </div>
+    <div>
+      {/* {order.OrderListItem} */}
+      <OrderDetail order={order} />
     </div>
-  );
+
+  )
 }
