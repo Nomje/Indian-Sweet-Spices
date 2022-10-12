@@ -9,7 +9,7 @@ import OrderDetail from '../../components/OrderDetail/OrderDetail';
 import UserLogOut from '../../components/UserLogOut/UserLogOut';
 
 
-export default function NewOrderPage() {
+export default function NewOrderPage({user , setUser}) {
 
   const [menuItems, setMenuItems] = useState([]);
   const [activeCat, setActiveCat] = useState('');
@@ -36,10 +36,40 @@ export default function NewOrderPage() {
     getCart();
   }, []);
 
-  
+  async function handleAddToOrder(itemid){
+    const updateCart = await ordersAPI.itemInCart(itemid);
+    setCart(updateCart);
+  }
+
+  async function handleChangeQty (itemid, newQty){
+    const updateCart = await ordersAPI.itemQtyCart(itemid, newQty);
+    setCart(updateCart);
+  }
+
+  async function handleCheckout(){
+    await ordersAPI.checkout();
+    navigate('/orders')
+  }
 
   return (
-    <h1>New Order Page</h1>
+    <div className='NewOrderPage'>
+      <aside>
+        <CategoryList 
+        categories={categoriesRef.current}
+        activeCat={activeCat}
+        setActiveCat={setActiveCat}/>
+
+        <Link to='/orders' className='button tn-sm'> previous orders</Link>
+        <UserLogOut user={user} setUser={setUser}/>
+      </aside>
+      <MenuList 
+      menuItems={menuItems.filter(item => item.category.name === activeCat)}
+      handleAddToOrder ={handleAddToOrder}/>
+      <OrderDetail 
+      order={cart}
+      handleChangeQty={handleChangeQty}
+      handleCheckout={handleCheckout}/>
+    </div>
   );
 }
 
