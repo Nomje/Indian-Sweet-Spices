@@ -13,7 +13,7 @@ export default function OrderHistoryPage({ user, setUser }) {
     async function getOrders() {
       const orders = await ordersAPI.getOrderForUser();
       setOrders(orders);
-      setActiveOrder(orders[0]);
+      setActiveOrder(orders[0] || null);
     }
     getOrders();
   }, []);
@@ -33,11 +33,12 @@ export default function OrderHistoryPage({ user, setUser }) {
     <aside>
       <OrderList 
           orders={orders}
+          activeOrder={activeOrder}
           handleDisplayOrder={handleDisplayOrder}
       />
     </aside>
-    {/* <OrderDetail 
-      order={activeOrder}  */}
+    <OrderDetail 
+      order={activeOrder} 
     />
     </main>
     :

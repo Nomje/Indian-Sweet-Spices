@@ -1,11 +1,12 @@
 import OrderListItem from "../OrderListItem/OrderListItem";
 
-export default function OrderList({ orders, handleSHowOrder }) {
+export default function OrderList({ orders, handleDisplayOrder, activeOrder }) {
   const orderListItems = orders.map(o =>
     < OrderListItem
       order={o}
       key={o._id}
-      handleSHowOrder={handleSHowOrder}
+      isDisplayed={o === activeOrder}
+      handleDisplayOrder={handleDisplayOrder}
     />
 
   )
