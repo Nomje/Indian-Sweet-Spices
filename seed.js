@@ -40,7 +40,7 @@ const Item = require('./models/item');
     { name: 'RajBhog', emoji: '🦀', category: categories[0], price: 9.99 },
     { name: 'Malai Sandwich', emoji: '🦀', category: categories[0], price: 9.99 },
     { name: 'Balu Shahi', emoji: '🦀', category: categories[0], price: 9.99 },
-    { name: 'Almond Burfi', emoji: '🦀', category: categories[0], price: 9.99 },
+    { name: 'Almond Burfi', emoji: 'https://sangskitchen.b-cdn.net/wp-content/uploads/2020/11/Almond-flour-burfi-768x767.jpg', category: categories[0], price: 9.99 },
     { name: 'Sutar Pheni', emoji: '🦀', category: categories[0], price: 9.99 },
     { name: 'Rasmalai', emoji: '🦀', category: categories[0], price: 9.99 },
     // Chat    

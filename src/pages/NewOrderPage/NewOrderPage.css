@@ -1,10 +1,9 @@
 .NewOrderPage {
   height: 100%;
   display: grid;
-  grid-template-columns: 1.6fr 3.5fr 3fr;
+  grid-template-columns: 3.5fr 2fr;
   grid-template-rows: 1fr;
   background-color: var(--white);
-  border-radius: 2vmin;
 }
 
 .NewOrderPage aside {
@@ -13,4 +12,37 @@
   justify-content: space-between;
   align-items: center;
   margin: 3vmin 2vmin;
+}
+
+.category-container {
+  padding-top: 2.5vh;
+}
+
+#category-title {
+  font-size: 1.4vw;
+  margin-bottom: 1.2vh;
+  margin-top: 1.1vh;
+  padding-bottom: 2vh;
+  border-bottom: 1px solid black;
+  width: 35vw;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+  background-color: white;
+}
+
+.user-welcome-container {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.7vw;
+  margin: 0vh 5.5vw 0vh 5.5vw;
+}
+
+#nav-username {
+  font-weight: 700;
 }
