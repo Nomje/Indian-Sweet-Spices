@@ -7,9 +7,11 @@
 
 .CategoryList li {
   padding: .6vmin;
+  display: inline;
   text-align: center;
   border-radius: .5vmin;
   margin-bottom: .5vmin;
+  
 }
 
 .CategoryList li:hover:not(.active) {
