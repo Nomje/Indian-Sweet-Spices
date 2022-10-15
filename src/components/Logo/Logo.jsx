@@ -1,10 +1,9 @@
 import './Logo.css';
-
+import logo from './logo.png'
 export default function Logo() {
   return (
     <div className="Logo text-3xl font-bold underline">
-      <div>SEI</div>
-      <div>CAFE</div>
+    <img src = {logo}></img>
     </div>
   );
 }

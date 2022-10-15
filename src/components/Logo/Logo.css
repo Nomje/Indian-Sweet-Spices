@@ -11,3 +11,10 @@
   font-size: 2.7vmin;
   border: .6vmin solid var(--tan-2);
 }
+
+img{
+  height: 12vmin;
+  width: 12vmin;
+  border-radius: 50%;
+  border: .6vmin solid var(--tan-2);
+}
