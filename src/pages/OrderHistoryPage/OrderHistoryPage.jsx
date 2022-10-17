@@ -26,7 +26,9 @@ export default function OrderHistoryPage({ user, setUser }) {
     <>
     <header>
       <Link id="back-to-shopping" to="/"> Back To Shopping</Link>
+      <div className="UserLogOut">
       <UserLogOut user={user} setUser={setUser}/>
+      </div>
     </header>
       <h1 className='title'>{user.name}'s Order History </h1>
       {orders.length ? 
