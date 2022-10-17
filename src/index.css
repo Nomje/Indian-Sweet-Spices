@@ -154,14 +154,14 @@ button.btn-xs {
 button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
   color: var(--grey-2);
-  background-color: rgb(48, 91, 248);
+  background-color: rgb(18, 65, 232);
   border-top: 1px solid var(--grey-2);
   border-bottom: 1px solid var(--grey-2);
 }
 
 button[type="submit"] {
   grid-column: span 2;
-  margin: 1vmin 0 0;
+  margin: 1vmin 0 0 ;
 }
 
 .submit-container {
@@ -169,4 +169,5 @@ button[type="submit"] {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  
 }

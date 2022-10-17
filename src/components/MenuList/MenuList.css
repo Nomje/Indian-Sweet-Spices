@@ -5,7 +5,7 @@
   margin: 3vmin min;
   padding: 3vmin;
   overflow-y: scroll;
-  width: 75%;
+  width: 100%;
   display: grid;
   border-top: .1vmin solid var(--tan-3);
   font-size: 1.5vw;
