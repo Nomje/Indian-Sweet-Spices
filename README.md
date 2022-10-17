@@ -1,5 +1,5 @@
 # _Indian Sweet & Spices_
-    Currently based in my Mom's Garage I have opeen up a Indian Cusinie resturant Soon to open in the Future. All food is vegatiarin and priced at a affordale price due understand all food is produced in house and is around dairy and nut products. 
+>Currently based in my Mom's Garage I have opeen up a Indian Cusinie resturant Soon to open in the Future. All food is vegatiarin and priced at a affordale price due understand all food is produced in house and is around dairy and nut products. 
     
 ### Come view Our Menu 
 > https://indian-sas.herokuapp.com
