@@ -25,7 +25,7 @@ export default function OrderHistoryPage({ user, setUser }) {
   return (
     <>
     <header>
-      <Link className='grow' id='back-to-shopping' to="/"><i className="fa-regular fa-angle-left"></i> Back To Shopping</Link>
+      <Link id="back-to-shopping" to="/"> Back To Shopping</Link>
     </header>
       <h1 className='title'>{user.name}'s Order History </h1>
       {orders.length ? 

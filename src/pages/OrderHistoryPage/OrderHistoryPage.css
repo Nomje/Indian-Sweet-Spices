@@ -51,10 +51,3 @@
     color: rgb(122, 122, 122);
 }
 
-.grow {
-    transition: all .2s ease-in-out;
-}
-
-.grow:hover {
-    transform: scale(1.1);
-}

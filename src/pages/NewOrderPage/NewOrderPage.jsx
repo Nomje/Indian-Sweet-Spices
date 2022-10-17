@@ -58,16 +58,19 @@ export default function NewOrderPage({ user, setUser }) {
 
   return (
     <main className="NewOrderPage">
-      <aside>
+      <aside> 
+        <div className="simple clsss">
         <Logo />
-        <CategoryList
+        <Link to="/orders" className="button btn-sm">PREVIOUS ORDERS</Link>
+        <UserLogOut user={user} setUser={setUser} />
+       </div>
+       
+      </aside>
+      <CategoryList
           categories={categoriesRef.current}
           activeCat={activeCat}
           setActiveCat={setActiveCat}
-        />
-        <Link to="/orders" className="button btn-sm">PREVIOUS ORDERS</Link>
-        <UserLogOut user={user} setUser={setUser} />
-      </aside>
+          />
       <MenuList
         menuItems={menuItems.filter(item => item.category.name === activeCat)}
         handleAddToOrder={handleAddToOrder}
@@ -77,6 +80,7 @@ export default function NewOrderPage({ user, setUser }) {
         handleChangeQty={handleChangeQty}
         handleCheckout={handleCheckout}
       />
+    
     </main>
   );
 }
