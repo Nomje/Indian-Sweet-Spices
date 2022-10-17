@@ -9,14 +9,8 @@ module.exports = {
   history,
 };
 
-async function history(req, res) {
-  // Get history of orders
-  const history = await Order.find({ user: req.user._id, isPaid: true })
-  console.log(history);
-  res.json(history)
-}
 
-// A cart is the unpaid order for a user
+
 async function cart(req, res) {
   const cart = await Order.getCart(req.user._id);
   res.json(cart);
@@ -42,4 +36,10 @@ async function checkout(req, res) {
   cart.isPaid = true;
   await cart.save();
   res.json(cart);
+}
+
+// adds orders to orderHistoryPage
+async function history(req, res) {
+  const history = await Order.find({ user: req.user._id, isPaid: true })
+  res.json(history)
 }

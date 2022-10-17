@@ -14,7 +14,6 @@ export default function NewOrderPage({ user, setUser }) {
   const [activeCat, setActiveCat] = useState('');
   const [cart, setCart] = useState(null)
   const categoriesRef = useRef([]);
-  // Use navigate object to change routes programmatically
   const navigate = useNavigate();
 
   useEffect(function () {
@@ -29,18 +28,12 @@ export default function NewOrderPage({ user, setUser }) {
     }
     getItems();
 
-    // Load cart (a cart is the unpaid order for the logged in user)
     async function getCart() {
       const cart = await ordersAPI.getCart();
       setCart(cart);
     }
     getCart();
   }, []);
-  // Providing an empty 'dependency array'
-  // results in the effect running after
-  // the FIRST render only
-
-  /*--- Event Handlers ---*/
   async function handleAddToOrder(itemId) {
     const cart = await ordersAPI.addItemToCart(itemId)
     setCart(cart)
